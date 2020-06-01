@@ -1,7 +1,7 @@
 //Sticky Header 
 var topBarHeight = $("header").innerHeight();
 $(window).scroll(function () {
-    "use strict";
+    "use strict";  
     if ($(window).scrollTop() >= topBarHeight) {
         $("header").addClass("sticky");
     } else {
