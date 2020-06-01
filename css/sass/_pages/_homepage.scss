@@ -1,0 +1,400 @@
+.main{
+    height: 100vh;
+    background: url("../img/main.jpg");
+    @include prefixer(background-size, cover, webkit moz o);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    .main-heading{
+        .pre-heading{
+            font-size: 18px;
+            color: #fff;
+            @include bid-style(letter-spacing, 10px, 0);
+        }
+        h1{
+            font-size: 70px;
+            color: #fff;
+            margin-bottom:15px;   
+            @media screen and (max-width:374.98px){
+                font-size:50px;
+            }
+        }
+        .paragraph{
+            color: #fff;
+            @include bid-style(font-size, 16px, 20px);
+            text-transform: capitalize;
+        }
+    }
+    .travers{
+        position: fixed;
+        bottom: 40px;
+        right:40px;
+        @include bidi-style(right, 40px, left , auto);
+        z-index: 900;
+        width: 60px;
+        height:60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $mainColor;
+        border-radius: 8px;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        @media #{$maxTablet} {
+            width: 50px;
+            height: 50px;
+            bottom: 20px;
+            @include bidi-style(right, 20px, left , auto);
+        }
+        &:hover{
+            background-color: #000;
+        }
+        a{
+            text-transform: capitalize;;
+            transition: 0.3s ease-in-out;
+            color: #fff;
+        }
+    }
+}
+.contact-us{
+    background-color: #f1f2f6;
+    padding:80px 0;
+    .contact-card{
+        background:#fff;
+        position: relative;
+        margin-top: -180px;
+        @extend %text-left;
+        @media #{$maxTablet} {
+            margin-top:0;
+        }
+        .card-heading{
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom:60px;
+        }
+        .left-card{
+            padding: 60px 30px;
+            @media #{$minLarge}{
+                @include bidi-style(border-right, 1px solid #d2d2d1a3, border-left, 0);
+            }
+            @media #{$maxTablet}{
+                border-bottom:1px solid #d2d2d1a3;
+            }
+            .field{
+                margin-bottom: 20px;
+                &.calendar{
+                    position: relative;
+                    input[type="date"]{
+                        position:absolute;
+                        top:11px;
+                        opacity:0;
+                        @include bid-style(right, 40px, auto);
+                        @include bid-style (left, auto, 26px);
+                        z-index:3;
+                    }
+                    i{
+                        font-size:24px;
+                        position:absolute;
+                        top:11px;
+                        @include bidi-style(right, 40px, left, auto);
+                        color: #999;
+                    }
+                }
+            }
+        }
+        .right-card{
+            padding: 60px 30px;
+            min-height:100%;
+            display:flex;
+            flex-wrap:wrap;
+            align-content: space-between;
+            @media #{$maxTablet}{
+                min-height:650px
+            }
+            .card-heading{
+                margin-bottom: 0;
+            }
+            .address{
+                h3{
+                    font-size: 24px;
+                    margin-bottom:15px;
+                    span{
+                        color:#999;
+                        opacity: 0.7;
+                    }
+                }
+            }
+            .email-hours, .call{
+                a{
+                    transition: 0.3s ease-in-out;
+                    &:hover{
+                        color: $mainColor;
+                    }
+                }
+            }
+            .email-hours{
+                h6{
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                    line-height: 1.4;
+                    span{
+                        color:#333;
+                    }
+                }
+            }
+            .call{
+                h6{
+                    color:#999;
+                    margin-bottom:25px
+                }
+                h4{
+                    font-size:30px;
+                    @media #{$maxSmall}{
+                        font-size:24px;
+                    }
+                    @media #{$minLarge} {
+                        font-size:26px;
+                    }
+                }
+            }
+        }
+    }
+}
+.features{
+    background-color: #f1f2f6;
+    padding:20px 0 80px;
+    text-align:center;
+    .paragraph{
+        margin-bottom:40px;
+        @media #{minLarge}{
+            width:80%;
+            margin: 0 auto;
+        }
+    }
+    .feat{
+        display:flex;
+        @extend %text-left;
+        padding:40px 30px;
+        background-color:#fff;
+        margin-bottom:20px;
+        transition:0.7s;
+        &:hover{
+            background: $mainColor;
+            i,h6,p{color:#fff;}
+        }
+        i{
+            width:20%;
+            font-size: 45px;
+            @include bidi-style(margin-right, 10%, margin-left, 0);
+            color:$mainColor;
+            @media screen and (max-width:424.98px){
+                font-size:30px
+            }
+            @media #{$maxSmall}{
+                width:15%;
+            }
+            @media #{$minXlarge}{
+                font-size:55px;
+            }
+        }
+        .feat-body{
+            flex:1;
+            h6{
+                margin-bottom: 15px;
+            }
+            p{
+                @extend .paragraph;
+                line-height:1.5;
+                margin-bottom:0;
+            }
+        }
+    }
+}
+.quote{
+    background: url(../img/quote.jpg) no-repeat center center fixed;
+    background-size:cover;
+    text-align:center;
+    padding: 100px 0;
+    color: #fff;
+    .quote-icon{
+        font-size:45px;
+        margin-bottom:60px;
+        @media #{$maxTablet}{
+            font-size:27px;
+            margin-bottom:30px;
+        }
+    }
+    .quote-content{
+        h2{
+            font-size:50px;
+            @media #{$maxTablet}{
+                font-size:25px
+            }
+        }
+    }
+}
+.team{
+    padding: 80px 0;
+    text-align:center;
+    background-color: #f1f2f6;
+    overflow: hidden;
+    .team-card{
+        padding:20px;
+        margin-bottom: 15px;
+        transition:0.5s;
+        background-color: #fff;
+        max-width: 370px;
+        margin: 0 auto;
+        &:hover{
+            @include bid-style(box-shadow, 3px 4px 20px #cccccca1, -3px -4px 20px #cccccca1 );
+            .card-content{
+                .card-link{
+                    color:$mainColor;
+                }
+            }
+        }
+        .card-pic{
+            .ratio{
+                padding-top:150%
+            }
+            img{
+                width:100%
+            }
+        }
+        .card-content{
+            padding:40px 20px;
+            h6{
+                font-size: 22px;
+                margin-bottom: 15px
+            }
+            .paragraph{
+                line-height:1.7;
+                margin-bottom:25px;
+            }
+            .card-link{
+                color: #888;
+                font-weight: bold;
+                text-transform: uppercase;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+.testimonials{
+    padding: 80px 0;
+    text-align:center;
+    overflow: hidden;
+    .client-card{
+        position: relative;
+        /*width: 500px !important;*/
+        padding: 90px 25px 25px;
+        margin-top: 60px;
+        @extend %text-left;
+        /*@include bid-style(float, left, right);*/
+        border: 1px solid #ccc;
+        &:not(:last-of-type){
+            @include bidi-style(margin-right, 15px, margin-left, 0);
+        }
+        .client-pic{
+            position: absolute;
+            top: -40px;
+            @include bidi-style(left, 30px, right, auto);
+            img{
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+        .card-icon{
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            @include bidi-style(right, 40px, left, auto);
+            font-size: 30px;
+            color: #ddd;
+        }
+        .client-content{
+            h3{
+                font-size: 20px;
+                margin-bottom:15px;
+                span{
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-style: italic;
+                    color: #999;
+                }
+            }
+
+        }
+    }
+}
+.news{
+    padding: 100px 0;
+    text-align: center;
+    .article{
+        @extend %text-left;
+        @media #{$maxTablet}{
+            max-width:370px;
+            margin: 0 auto 40px;
+        }
+        &:not(:last-of-type){
+            @include bidi-style(margin-right, 20px, margin-left, 0);
+        }
+        .article-pic{
+            .ratio{
+                padding-top:66.6667%
+            }
+            img{
+                width:100%
+            }
+        }
+        .article-content{
+            padding:15px 0;
+            &:hover {
+                .article-link{
+                    color:$mainColor;
+                }
+            }
+            .pre-title{
+                font-size: 14px;
+                color: #999;
+                @include opacity(0.7);
+                word-spacing: 6px;
+                margin-bottom: 10px;
+            }
+            .title{
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+            .article-link{
+                text-transform: capitalize;
+                font-weight: bold;
+                font-size: 14px;
+                color:#999;
+                transition:0.5s;
+                i{
+                    width:20px;
+                    &::before{
+                        @include bid-style(content, '\f061', '\f060');
+                        @include bidi-style(margin-left, 10px, margin-right, 0);
+                        font-family: FontAwesome;
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        vertical-align: middle;
+                        font-weight: 900; 
+                    }
+                }
+            }
+        }
+    }
+}
+.map{
+    iframe{
+        height:500px;
+    }
+}    

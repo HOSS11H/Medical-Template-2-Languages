@@ -1,0 +1,215 @@
+footer{
+    background: #343a40;
+    padding:80px 0;
+    .foot-text{
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+        @media #{$maxTablet} {
+            font-size:16px
+        }
+    }
+    .foot-heading{
+        color: #fff;
+        margin-bottom: 40px;
+    }
+    .info,.tags,.posts,.mailing{
+        @extend %text-left;
+        @media #{$maxTablet} {
+            text-align: center;
+        }
+    }
+    .info{
+        margin-bottom: 25px;
+        .brand{
+            border-bottom:1px solid #999;
+            .logo{
+                width: 35px;
+                height: 46px;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 25px;
+                @media #{$maxTablet} {
+                    margin: 0 auto;
+                    margin-bottom: 40px;
+                }
+                img {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    right:0;
+                    height:200%
+                }
+            }
+            p{
+                margin-bottom:20px
+            }
+        }
+        .communication{
+            padding:10px 0;
+            &:not(:last-of-type){
+                border-bottom:1px solid #999;
+            }
+            a{
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    color: #fff;
+                }
+            }
+            /* &.call{
+                i{
+                    width: 35px;
+                    display: inline-block;
+                    &::before{
+                        @include bid-style(content, '\f075', '\f095');
+                        font-family: FontAwesome;
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        vertical-align: middle;
+                        font-weight: 400; 
+                    }
+                }
+            }*/
+            i{
+                font-size: 19px;
+                color: #999;
+                width: 35px;
+            }
+        }
+    }
+    .tags{
+        margin-bottom: 25px;
+        .tags-menu{
+            .tag{
+                display:inline-block;
+                background-color: #14232fbf;
+                padding:5px 8px;
+                margin: 3px;
+                @media #{$maxTablet} {
+                    margin:6px;
+                    font-size:18px
+                }
+                color:#999;
+                text-transform: capitalize;
+                transition:0.5s;
+                cursor:pointer;
+                &:hover{
+                    color:#fff;
+                    background-color:$mainColor;
+                }
+            }
+        }
+    }
+    .posts{
+        margin-bottom: 25px;
+        @media #{$minLarge} {
+            margin-top: -8px;
+        }
+        li{
+            &:not(:last-of-type){
+                border-bottom:1px solid #999;
+            }
+            .post{
+                padding: 9px 0;
+                color:#999;
+                font-size: 14px;
+                @media #{$maxTablet} {
+                    font-size:18px
+                }
+                transition:0.5s;
+                display:block;
+                i{
+                    width: 20px;
+                    display: inline-block;
+                    &::before{
+                        @include bid-style(content, '\f101', '\f100');
+                        font-family: FontAwesome;
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        font-weight: 400; 
+                    }
+                }
+                &:hover{
+                    color:#fff;
+                }
+            }
+        }
+        
+    }
+    .sign-up{
+        border-bottom: 1px solid #999;
+        p{
+            margin-bottom:30px;
+        }
+        form{
+            display:flex;
+            margin-bottom:40px;
+            input[type="email"]{
+                width:80%;
+                background:#fff;
+                padding: 10px;
+                border: 0;
+                @media #{$maxTablet}{
+                    padding:15px
+                }
+            }
+            a{
+                width:20%;
+                text-align:center;
+                background-color:$mainColor;
+                color:#fff;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    background-color: #000;
+                }
+                i{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    @media #{$maxTablet}{
+                        font-size:25px;
+                    }
+                    &::before{
+                        @include bid-style(content, '\f061', '\f060');
+                        font-family: FontAwesome;
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        vertical-align: middle;
+                        font-weight: 900; 
+                    }
+                }
+            }
+        }
+    }
+    .social-footer{
+        padding-top:10px;
+        @media #{$maxTablet} {
+            margin-top: 40px
+        }
+        li{
+            display:inline-block;
+            @include bidi-style(margin-right, 15px, margin-left, 0);
+            @media #{$maxTablet}{
+                @include bidi-style(margin-right, 25px, margin-left, 0);
+            }
+            a{
+                color:#999;
+                transition:0.5s;
+                &:hover{
+                    color:$mainColor;
+                }
+            }
+        }
+    }    
+}

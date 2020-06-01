@@ -1,0 +1,347 @@
+header{
+    overflow: hidden;
+    background: #fff;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    transition: 0.5s;
+    z-index:4;
+    &.sticky{
+        animation: slideIn 0.3s linear;
+        box-shadow: 2px 3px 4px -3px $mainColor;
+        @media #{$maxTablet}{
+            top:0
+        }
+        @media #{$minLarge}{
+            top: -50px
+        }
+    }
+    .top-bar{
+        @extend %text-left;
+        border-bottom: 1px solid #9999997a;
+        @media #{$minLarge}{
+            height:50px;
+        }
+        .welcome{
+            h4{
+                font-size:18px;
+                padding:10px 0;
+                color:$textColor;
+                @media #{$minTablet}{
+                    font-size:16px;
+                    line-height:50px;
+                    padding:0;
+                }
+                @media #{$minLarge}{
+                    font-size:14px
+                }
+                @media #{$minXlarge}{
+                    font-size:16px
+                }
+            }
+        }
+        .log-in{
+            .social-menu{
+                line-height: 50px;
+                display:inline-block;
+                @media #{$minTablet}{
+                    @include bidi-style(padding-right, 20px, padding-left, 0);
+                    position:relative;
+                    &::after{
+                    content:'';
+                    position:absolute;
+                    top:50%;
+                    @include bidi-style(right, 0, left, auto);
+                    transform:translateY(-50%);
+                    display:block;
+                    width:1px;
+                    height:20px;
+                    background-color:$textColor;
+                }
+                }
+                li{
+                    display:inline-block;
+                    &:not(:last-of-type){
+                        @media #{$maxLarge}{
+                            @include bidi-style(margin-right, 12px, margin-left, 0);
+                        }
+                        @media #{$minXlarge}{
+                            @include bidi-style(margin-right, 20px, margin-left, 0);
+                        }
+                    }
+                    .social{
+                        display: block;
+                        height: 100%;
+                        color:$textColor;
+                        transition:0.5s;
+                        &:hover{
+                            color:$mainColor;
+                        }
+                        i{
+                            @media #{$minLarge}{
+                                font-size:13px
+                            }
+                            @media #{$minXlarge}{
+                                font-size:16px
+                            }
+                            cursor:pointer;
+                        }
+                    }
+                }
+            }
+            .register{
+                display:block;
+                @media #{$maxSmall} {
+                    margin-bottom:10px
+                }
+                @media #{$minTablet}{
+                    display:inline-block;
+                    @include bidi-style(padding-left, 20px, padding-right, 0);;
+                }
+                font-weight: bold;
+                &:hover{
+                    i{
+                        color:$mainColor;
+                        cursor: pointer;
+                    }
+                    a::after{
+                        width:100%;
+                    }
+                }
+                i{
+                    color:$textColor;
+                    @include bidi-style(margin-right, 5px, margin-left, 0);
+                    @media #{$minTablet}{
+                        @include bidi-style(margin-right, 5px, margin-left, 0);
+                    }
+                    @media #{$minLarge}{
+                        font-size:13px;
+                    }
+                    @media #{$minXlarge}{
+                        font-size:16px;
+                        @include bidi-style(margin-right, 10px, margin-left, 0);
+                    }
+                }
+                a{
+                    color:$textColor;
+                    text-decoration:none;
+                    padding-bottom: 5px;
+                    position:relative;
+                    @media #{$minLarge}{
+                        font-size:14px
+                    }
+                    @media #{$minXlarge}{
+                        font-size:16px
+                    }
+                    @media #{$minLarge} {
+                        &::after{
+                            content:'';
+                            position:absolute;
+                            bottom:0;
+                            @include bidi-style(left, 0, right, auto);
+                            display:block;
+                            height:1px;
+                            width:0;
+                            background-color:$textColor;
+                            transition:0.5s;
+                        }
+                    }
+                    span{
+                        color: $mainColor;
+                    }
+                    &:hover {
+                        &::after{
+                            width:100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    nav{
+        .container{
+            overflow:hidden;
+            .logo{
+                @extend %float-left;
+                width: 35px;
+                height: 46px;
+                margin: 20px 0;
+                position: relative;
+                overflow: hidden;
+                img {
+                    position:absolute;
+                    top:-100%;
+                    left:0;
+                    right:0;
+                    height:200%
+                }
+        }
+        .menu{
+            @extend %float-right;
+            @include bid-style(text-align, left, right);
+            transition:max-height 0.5s;
+            @media #{$minLarge} {
+                line-height: 86px;
+                @include bidi-style(margin-right, 40px, margin-left, 0);
+            }
+            @media #{$maxTablet} {
+                width: 100%;
+                max-height:0;
+                &.active{
+                    max-height:340px;
+                }
+            }
+
+            li{
+                transition:0.5s;
+                @media #{$minLarge} {
+                    display:inline-block;
+                    @include bid-style(padding, 0 20px, 0 18px);
+                }
+                @media #{$maxTablet} {
+                    display:block;
+                }
+                a{
+                    @include bid-style(font-size, 18px, 14px);
+                    @media #{$minTablet}{
+                        @include bid-style(font-size, 14px, 16px);
+                        padding:0;
+                    }
+                    @media #{$minLarge}{
+                        @include bid-style(font-size, 14px, 14px);
+                    }
+                    @media #{$minXlarge}{
+                        @include bid-style(font-size, 16px, 14px);
+                    }
+                    text-transform:capitalize;
+                    color:#000;
+                    font-weight:bold;
+                    display: block;
+                    height: 100%;
+                    position: relative;
+                    transition: 0.5s;
+                    @media #{$maxTablet} {
+                        @include bid-style(padding, 15px 0 , 15px 0);
+                        &:hover{
+                            @include bid-style(padding, 15px 0 15px 20px, 15px 20px 15px 0);
+                            background-color: $mainColor;
+                            color:#fff;
+                        }
+                    }
+                    @media #{$minLarge} {
+                        &::after{
+                            content: '';
+                            position:absolute;
+                            bottom:0;
+                            @include bidi-style(left, 50%, right, auto);
+                            @include bid-style(transform, translateX(-50%), translateX(50%));
+                            height:2px;
+                            width:0;
+                            background-color:$mainColor;
+                            transition:0.5s;
+                        }
+                        &:hover{
+                            &::after{
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .show-menu-btn{
+            @extend %float-right;
+            position: relative;
+            margin: 30px 0 10px;
+            width: 40px;
+            height: 30px;
+            cursor:pointer;
+            .humburger{
+                display:block;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                height:4px;
+                width:100%;
+                background-color:$mainColor;
+                box-shadow: 0 2px 5px rgba(#fff,0.5);
+                transition:0.5s;
+                &::before{
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    top:-11px;
+                    left:0;
+                    height:4px;
+                    width:100%;
+                    background-color:$mainColor;
+                    box-shadow: 0 2px 5px rgba(#fff,0.5);
+                    transition:0.5s;
+                }
+                &::after{
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    top:11px;
+                    height: 4px;
+                    width:100%;
+                    background-color:$mainColor;
+                    box-shadow: 0 2px 5px rgba(#fff,0.5);
+                    transition:0.5s;
+                }
+                &.active{
+                    background-color: rgba(0,0,0,0);
+                    box-shadow: 0 2px 5px rgba(0,0,0,0);
+                    &::before{
+                        top:0;
+                        transform:rotate(45deg)
+                    }
+                    &::after{
+                        transform:rotate(-45deg);
+                        bottom:auto;
+                        top:0;
+                    }
+                }
+            }
+        }
+        .btn{
+            @extend %float-right;
+            margin-top: 19px;
+            @include bid-style(margin-top, 19px, 23px);
+            background-color:$mainColor;
+            color:#fff;
+            padding: 10px 20px;
+            text-transform: capitalize;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                background-color: #000;
+            }
+            @media #{$minTablet}{
+                @include bid-style(font-size, 14px, 14px);
+            }
+            @media #{$minLarge}{
+                @include bid-style(font-size, 14px, 14px);
+            }
+            @media #{$minXlarge}{
+                @include bid-style(font-size, 16px, 14px);
+            }
+            i{
+                @include bidi-style(margin-right, 8px, margin-left, 0);
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        }
+    }
+}
+@include keyFrame(slideIn){
+    0%{
+        transform: translateY(-200px)
+    }
+    100%{
+        transform: translateY(0)
+    }
+}
