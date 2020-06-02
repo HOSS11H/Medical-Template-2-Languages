@@ -60,7 +60,7 @@
             transition: 0.3s ease-in-out;
             color: #fff;
             i{
-                margin-right: 4px;
+                @include bidi-style(margin-right, 4px, margin-left , 0);
             }
         }
     }
