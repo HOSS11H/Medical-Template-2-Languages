@@ -11506,6 +11506,17 @@ html[dir=rtl] .main .travers {
 }
 
 .main .travers a {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-transform: capitalize;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
